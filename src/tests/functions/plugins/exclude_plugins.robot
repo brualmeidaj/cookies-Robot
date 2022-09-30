@@ -5,14 +5,8 @@ ${pagepluginsunstall}               ${website_url}/wp-admin/plugins.php
 Processa Exclusão de plugins
     Go To               ${pagepluginsunstall}
 
-    ${askimet}=             Get Element Count               xpath://*[@data-slug='akismet']
 
-    IF  ${askimet} != 0
-        Desativar e Excluir Askimet Anti-Spam
-        Desativar
-    END
-
-    ${booked}=             Geadfet Element Count               xpath://*[@data-slug='booked']
+    ${booked}=             Get Element Count               xpath://*[@data-slug='booked']
 
     IF  ${booked} != 0
         Desativar e Excluir Booked
@@ -66,26 +60,27 @@ Processa Exclusão de plugins
 Desativar e Excluir Askimet Anti-Spam
     Wait Until Element Is Visible               css:input[value="akismet/akismet.php"]
     Mouse Down                                  css:input[value="akismet/akismet.php"]
-    Run Keyword If              css:input[value="akismet/akismet.php"] == True                      Sleep    3s
+    Sleep                                       5
     Click Element                               css:input[value="akismet/akismet.php"]
 
 Desativar e Excluir Booked
     Wait Until Element Is Visible               css:input[value="booked/booked.php"]       
     Mouse Down                                  css:input[value="booked/booked.php"]
-    Run Keyword If    css:input[value="booked/booked.php"] == True         Sleep    3s
+    Sleep                                       5
     Click Element                               css:input[value="booked/booked.php"]
 
 Desativar e Excluir Breadcrumb
     Wait Until Element Is Visible               css:input[value="breadcrumb-navxt/breadcrumb-navxt.php"]
     Mouse Down                                  css:input[value="breadcrumb-navxt/breadcrumb-navxt.php"]
-    Run Keyword If    css:input[value="breadcrumb-navxt/breadcrumb-navxt.php"] == True         Sleep    3s
+    Sleep                                       5
     Click Element                               css:input[value="breadcrumb-navxt/breadcrumb-navxt.php"]
 
 Desativar e Excluir Honeypot
     Wait Until Element Is Visible               css:input[value="contact-form-7-honeypot/honeypot.php"]
     Mouse Down                                  css:input[value="contact-form-7-honeypot/honeypot.php"]
-    Run Keyword If    css:input[value="contact-form-7-honeypot/honeypot.php"] == True         Sleep    3s
+    Sleep                                       5
     Click Element                               css:input[value="contact-form-7-honeypot/honeypot.php"]
+
 
 
 Desativar

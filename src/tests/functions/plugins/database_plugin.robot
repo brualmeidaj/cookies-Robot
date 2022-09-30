@@ -55,7 +55,7 @@ Plugin DATABASE upload
 Plugin DATABASE Instalar
     Sleep                                           7               
     Click Element                                   ${upload_database}
-    Sleep                                           7
+    Sleep                                           10
 
 Plugin DATABASE Ativar
     Go To                                           ${pluginsativar}

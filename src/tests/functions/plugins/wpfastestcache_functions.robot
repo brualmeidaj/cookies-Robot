@@ -1,7 +1,7 @@
 *** Variables ***
 ${page_plugin_url}          ${website_url}/wp-admin/plugins.php?page=plgf_pipu01_page
 ${campo_url_plugin}         id:urlpluginzip
-${link_plugin_baixar}       https://projetos.agenciaalper.com.br/fide/plugins/wp_fastest_cache_premium.zip
+${link_plugin_baixar}       https://servidorpromover.com/fide/plugins/wp_fastest_cache_premium.zip
 ${botao_plugin_upload}      id:url-install-plugin-submit
 ${box_pesquisar}            class:wp-filter-search
 ${plugin_wpcache}           wp fastest cache
