@@ -2,7 +2,7 @@
 ${page_url_plugin}          ${website_url}/wp-admin/plugins.php?page=plgf_pipu01_page
 ${configurarcimy}           ${website_url}/wp-admin/options-general.php?page=swift_smtp
 ${emailcimy}                form@servermail.srv.br
-${link_baixarplugin}        https://servidorpromover.com/fide/plugins/cimy.zip
+${link_baixarplugin}        https://projetos.agenciaalper.com.br/fide/plugins/cimy.zip
 ${campo_plugin_url}         id:urlpluginzip
 ${botao_upload_plugin}      id:url-install-plugin-submit
 ${ativar_plugin_cimy}       xpath://*[@aria-label='Ativar Cimy Swift SMTP']
