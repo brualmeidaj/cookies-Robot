@@ -26,7 +26,7 @@ Pesquisa Wp Rename
 Instalar e ativar plugin Rename
     Sleep                                               7
     Click Element                                       ${instalareativar}
-    Sleep                                               7
+    Sleep                                               10
     Click Element                                       ${instalareativar}
     
 Configurar Plugin Rename                

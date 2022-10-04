@@ -53,7 +53,7 @@ Baixar WP FASTEST CACHE e Ativar
     Sleep                                                       5
     Wait Until Element Is Visible                               ${instalarwpcache}
     Click Element                                               ${instalarwpcache}
-    Sleep                                                       7
+    Sleep                                                       10
     Click Element                                               ${instalarwpcache}
     Sleep                                                       3
 

@@ -22,5 +22,5 @@ Plugin URL upload
     Input Text              ${plugin_url_seletor_boxpesquisar}           ${plugin_url_name}
     Wait Until Element Is Visible               ${checkurlplugin}
     Click Element                               ${plugin_url_seletor_instalar}
-    Sleep                                       7
+    Sleep                                       10
     Click Element                               ${plugin_url_seletor_instalar}
