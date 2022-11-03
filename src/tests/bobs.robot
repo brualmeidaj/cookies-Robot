@@ -7,7 +7,7 @@ Test Setup          Nova sessao
 *** Test Cases ***
 Bobs robot
     Faz Login
-    Processa Plugins 
-    Processa Configurações
+    Instala Plugin
+    Configura Plugin
 
  
