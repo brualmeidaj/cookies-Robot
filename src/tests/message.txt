@@ -1,1 +1,1 @@
-<div class="map-area-container"><div class="map_notification-message">Utilizamos cookies para melhorar sua experiência online.[myagileprivacy_extra_info]</div><div class="map_notification_container">[myagileprivacy_cookie_accept][myagileprivacy_cookie_reject]</div></div>
+Este site usa cookies para garantir que você tenha a melhor experiência em nosso site.

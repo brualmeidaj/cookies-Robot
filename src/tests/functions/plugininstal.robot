@@ -1,15 +1,14 @@
 *** Variables ***
-${plugin_name}                              	MyAgilePrivacy
+${plugin_name}                              	Cookie Notice & Compliance for GDPR/CCPA
 ${boxpesquisar}                                 class:wp-filter-search
-${plugin_instal}                                xpath://*[@data-slug='myagileprivacy']
-${checkplugintwo}                               class:plugin-card-myagileprivacy
+${checkplugin}                                  xpath://*[@data-slug='cookie-notice']
 
 
 *** Keywords ***
 Instala Plugin
     Go To               ${website_url}/wp-admin/plugins.php
 
-    ${checkplugin}=             Get Element Count               xpath://*[@data-slug='myagileprivacy']
+    ${checkplugin}=             Get Element Count               xpath://*[@data-slug='cookie-notice']
 
     IF  ${checkplugin} == 0
         Plugin upload
@@ -19,7 +18,7 @@ Plugin upload
     Go To                                       ${website_url}/wp-admin/plugin-install.php
     Sleep                                       7
     Input Text                                  ${boxpesquisar}           ${plugin_name}
-    Wait Until Element Is Visible               ${checkplugintwo}
-    Click Element                               ${plugin_instal}
+    Sleep                                       7
+    Click Element                               ${checkplugin}
     Sleep                                       10
-    Click Element                               ${plugin_instal}
+    Click Element                               ${checkplugin}

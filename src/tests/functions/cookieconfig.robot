@@ -3,34 +3,35 @@ Library    SeleniumLibrary
 *** Variables ***
 ${pluginmyagile}                    ${website_url}/wp-admin/admin.php?page=my-agile-privacy-c_settings
 ${PATH}                             C:\\Users\\Bruna\\cookiesRobot\\cookiesRobot\\src\\tests\\message.txt
-${inputbox}                         id:notify_message_field
+${inputbox}                         css:textarea[name="cookie_notice_options[message_text]"]
 ${tabposition}                      id:notify_position_horizontal_field
-${leftposition}                     css:option[value="left"]
-${cookiestext}                      <i class="fa-solid fa-cookie">Cookies</i>
-${boxcookies}                       id:showagain_text
-${checkboxcookie}                   id:cookie_policy_link_field
-${updatesettings}                   css:input[name="update_admin_settings_form"]
+${boxaccept}                        css:input[name="cookie_notice_options[accept_text]"]
+${accept}                           Aceitar
+${enablerefuse}                     id:cn_refuse_opt
+${boxrefuse}                        css:input[name="cookie_notice_options[refuse_text]"]
+${refuse}                           Recusar
+${customize}                        id:button_customize_text_field
+${customizeblank}                   Customizar
+${enableaccept}                     css:input[name="cookie_notice_options[on_click]"]
+${accept_expired}                   css:input[name="cookie_notice_options[time]"]
+${accepted_infinity}                css:option[value="infinity"]
+${refuse_expired}                   ${css:input[name="cookie_notice_options[time_rejected]"]}
+${accepted_infinity}                css:option[value="week"] 
 
 *** Keywords ***
 Configura Plugin
     Go To                                       ${pluginmyagile}
     Sleep                                        7
     General Configuration
-    Buttons Configuration
-
 
 General Configuration
-    ${Cmd_Output}       Get File            ${PATH}          encoding=UTF-8    encoding_errors=strict   
-    Input Text          ${inputbox}            ${Cmd_Output}   
+    ${Cmd_Output}             Get File                  ${PATH}          encoding=UTF-8    encoding_errors=strict   
+    Input Text              ${inputbox}                 ${Cmd_Output}   
     Mouse Down                                          ${tabposition}
-    Click Element                                       ${tabposition}
-    Click Element                                       ${leftposition}
-    Input Text           ${boxcookies}             ${cookiestext}
-    Sleep                                               5
-    Click Element                                       ${checkboxcookie}
-    Click Button                                        ${updatesettings}
-    Sleep                                               7
-
-Buttons Configuration             
-    Go To                                            ${website_url}/wp-admin/edit.php?post_type=my-agile-privacy-c&page=my-agile-privacy-c_settings&tab=buttons
-    Sleep                                               7 
+    Input Text              ${boxaccept}                ${accept}
+    Click Element                                       ${enablerefuse}
+    Input Text              ${boxrefuse}                ${refuse}
+    Click Element                                       ${enableaccept}
+    Click Element                                       ${accept_expired}
+    Click Element                                       ${accepted_infinity}
+    Click Element                                       ${refuse_expired}
