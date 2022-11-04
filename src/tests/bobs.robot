@@ -7,7 +7,7 @@ Test Setup          Nova sessao
 *** Test Cases ***
 Bobs robot
     Faz Login
-    Instala Plugin
+    # Instala Plugin
     Configura Plugin
 
  

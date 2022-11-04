@@ -18,9 +18,9 @@ ${accept_expired}                   css:select[name="cookie_notice_options[time]
 ${accepted_infinity}                css:option[value="infinity"]
 ${refuse_expired}                   css:select[name="cookie_notice_options[time_rejected]"]
 ${accepted_week}                    xpath://div[@id="cn_time_rejected"]//option[3]
-${buttoncolor}                      xpath://button[@class="button wp-color-result wp-picker-open"]
+${buttoncolor}                      xpath://*[@id="cn_colors-text"]//button
 ${colorwords}                       xpath://a[@class="iris-palette"]
-${buttonbackground}                 xpath://button[@class="button wp-color-result wp-picker-open"]
+${buttonbackground}                 xpath://*[@id="cn_colors-bar"]//button
 ${boxchangecolor}                   css:select[name="cookie_notice_options[colors][bar]"] 
 ${colorwhite}                       #fff
 ${salvar}                           id:save_cookie_notice_options
