@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+
 *** Variables ***
-${pluginmyagile}                    ${website_url}/wp-admin/admin.php?page=my-agile-privacy-c_settings
+${plugincookienotice}               ${website_url}/wp-admin/admin.php?page=cookie-notice
 ${PATH}                             C:\\Users\\Bruna\\cookiesRobot\\cookiesRobot\\src\\tests\\message.txt
 ${inputbox}                         css:textarea[name="cookie_notice_options[message_text]"]
 ${tabposition}                      id:notify_position_horizontal_field
@@ -13,21 +14,21 @@ ${refuse}                           Recusar
 ${customize}                        id:button_customize_text_field
 ${customizeblank}                   Customizar
 ${enableaccept}                     css:input[name="cookie_notice_options[on_click]"]
-${accept_expired}                   css:input[name="cookie_notice_options[time]"]
+${accept_expired}                   css:select[name="cookie_notice_options[time]"]
 ${accepted_infinity}                css:option[value="infinity"]
-${refuse_expired}                   ${css:input[name="cookie_notice_options[time_rejected]"]}
+${refuse_expired}                   css:input[name="cookie_notice_options[time_rejected]"]
 ${accepted_infinity}                css:option[value="week"] 
 
 *** Keywords ***
 Configura Plugin
-    Go To                                       ${pluginmyagile}
+    Go To                                       ${plugincookienotice}
     Sleep                                        7
     General Configuration
 
 General Configuration
     ${Cmd_Output}             Get File                  ${PATH}          encoding=UTF-8    encoding_errors=strict   
-    Input Text              ${inputbox}                 ${Cmd_Output}   
-    Mouse Down                                          ${tabposition}
+    Input Text                ${inputbox}                 ${Cmd_Output}   
+    Mouse Down                                          ${boxaccept}
     Input Text              ${boxaccept}                ${accept}
     Click Element                                       ${enablerefuse}
     Input Text              ${boxrefuse}                ${refuse}
