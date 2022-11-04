@@ -21,7 +21,7 @@ ${accepted_week}                    xpath://div[@id="cn_time_rejected"]//option[
 ${buttoncolor}                      xpath://*[@id="cn_colors-text"]//button
 ${colorwords}                       xpath://a[@class="iris-palette"]
 ${buttonbackground}                 xpath://*[@id="cn_colors-bar"]//button
-${boxchangecolor}                   css:select[name="cookie_notice_options[colors][bar]"] 
+${boxchangecolor}                   xpath://*[@id="cn_colors-bar"]//input
 ${colorwhite}                       #fff
 ${salvar}                           id:save_cookie_notice_options
 
