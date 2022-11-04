@@ -16,8 +16,14 @@ ${customizeblank}                   Customizar
 ${enableaccept}                     css:input[name="cookie_notice_options[on_click]"]
 ${accept_expired}                   css:select[name="cookie_notice_options[time]"]
 ${accepted_infinity}                css:option[value="infinity"]
-${refuse_expired}                   css:input[name="cookie_notice_options[time_rejected]"]
-${accepted_infinity}                css:option[value="week"] 
+${refuse_expired}                   css:select[name="cookie_notice_options[time_rejected]"]
+${accepted_week}                    xpath://div[@id="cn_time_rejected"]//option[3]
+${buttoncolor}                      xpath://button[@class="button wp-color-result wp-picker-open"]
+${colorwords}                       xpath://a[@class="iris-palette"]
+${buttonbackground}                 xpath://button[@class="button wp-color-result wp-picker-open"]
+${boxchangecolor}                   css:select[name="cookie_notice_options[colors][bar]"] 
+${colorwhite}                       #fff
+${salvar}                           id:save_cookie_notice_options
 
 *** Keywords ***
 Configura Plugin
@@ -36,3 +42,9 @@ General Configuration
     Click Element                                       ${accept_expired}
     Click Element                                       ${accepted_infinity}
     Click Element                                       ${refuse_expired}
+    Click Element                                       ${accepted_week} 
+    Click Button                                        ${buttoncolor}
+    Click Element                                       ${colorwords} 
+    Click Button                                        ${buttonbackground}
+    Input Text              ${boxchangecolor}           ${colorwhite}
+    Click Button                                        ${salvar}
