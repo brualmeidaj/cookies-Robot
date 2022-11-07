@@ -21,9 +21,10 @@ ${accepted_week}                    xpath://div[@id="cn_time_rejected"]//option[
 ${buttoncolor}                      xpath://*[@id="cn_colors-text"]//button
 ${colorwords}                       xpath://a[@class="iris-palette"]
 ${buttonbackground}                 xpath://*[@id="cn_colors-bar"]//button
-${boxchangecolor}                   xpath://*[@id="cn_colors-bar"]//input
-${colorwhite}                       #fff
+${boxchangecolor}                   css:input[name="cookie_notice_options[colors][bar]"]
+${textchangecolor}                  #ffffff
 ${salvar}                           id:save_cookie_notice_options
+
 
 *** Keywords ***
 Configura Plugin
@@ -36,6 +37,7 @@ General Configuration
     Input Text                ${inputbox}                 ${Cmd_Output}   
     Mouse Down                                          ${boxaccept}
     Input Text              ${boxaccept}                ${accept}
+    Wait Until Element Is Visible                       ${enablerefuse}
     Click Element                                       ${enablerefuse}
     Input Text              ${boxrefuse}                ${refuse}
     Click Element                                       ${enableaccept}
@@ -46,5 +48,9 @@ General Configuration
     Click Button                                        ${buttoncolor}
     Click Element                                       ${colorwords} 
     Click Button                                        ${buttonbackground}
-    Input Text              ${boxchangecolor}           ${colorwhite}
+    Wait Until Element Is Visible                       ${boxchangecolor}
+    Click Element                                       ${boxchangecolor}
+    Input Text              ${boxchangecolor}           ${textchangecolor}
+    Wait Until Element Is Visible                       xpath://*[@id="cn_colors-bar"]//div//a[2]
+    Click Element                                       xpath://*[@id="cn_colors-bar"]//div//a[2]
     Click Button                                        ${salvar}
