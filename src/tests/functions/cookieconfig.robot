@@ -7,10 +7,7 @@ ${PATH}                             C:\\Users\\Bruna\\cookiesRobot\\cookiesRobot
 ${inputbox}                         css:textarea[name="cookie_notice_options[message_text]"]
 ${tabposition}                      id:notify_position_horizontal_field
 ${boxaccept}                        css:input[name="cookie_notice_options[accept_text]"]
-${accept}                           Aceitar
-${enablerefuse}                     id:cn_refuse_opt
-${boxrefuse}                        css:input[name="cookie_notice_options[refuse_text]"]
-${refuse}                           Recusar
+${accept}                           Ok
 ${customize}                        id:button_customize_text_field
 ${customizeblank}                   Customizar
 ${enableaccept}                     css:input[name="cookie_notice_options[on_click]"]
@@ -37,9 +34,6 @@ General Configuration
     Input Text                ${inputbox}                 ${Cmd_Output}   
     Mouse Down                                          ${boxaccept}
     Input Text              ${boxaccept}                ${accept}
-    Wait Until Element Is Visible                       ${enablerefuse}
-    Click Element                                       ${enablerefuse}
-    Input Text              ${boxrefuse}                ${refuse}
     Click Element                                       ${enableaccept}
     Click Element                                       ${accept_expired}
     Click Element                                       ${accepted_infinity}
