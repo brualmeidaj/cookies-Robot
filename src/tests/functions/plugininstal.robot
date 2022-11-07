@@ -20,5 +20,5 @@ Plugin upload
     Input Text                                  ${boxpesquisar}           ${plugin_name}
     Sleep                                       7
     Click Element                               ${checkplugin}
-    Sleep                                       10
+    Sleep                                       15
     Click Element                               ${checkplugin}
